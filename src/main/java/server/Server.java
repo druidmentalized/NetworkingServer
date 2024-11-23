@@ -1,3 +1,5 @@
+package server;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.util.ArrayList;
@@ -14,7 +16,13 @@ public class Server {
     }
 
     private void launch() {
-        config = Config.loadFromTxt("C:\\IDEAProjects\\NetworkingServer\\src\\config.txt");
+        String filePath = "/config.txt";
+
+        System.out.println("Welcome to the server!");
+        config = Config.loadFromTxt(filePath);
+        System.out.println("Server " + config.getName() + " ready to accept connections with port " + config.getPort());
+        System.out.println();
+
         try {
             //opening a server socket to let clients connect
             serverSocket = new ServerSocket(config.getPort());
@@ -43,7 +51,6 @@ public class Server {
         return connectedClients;
     }
 
-    //todo ask about correct getting name of a server and other stuff
     public String getServerName() {
         return config.getName();
     }

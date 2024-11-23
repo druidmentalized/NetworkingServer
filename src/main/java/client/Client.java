@@ -1,3 +1,5 @@
+package client;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -35,6 +37,9 @@ public class Client {
 
             //writing information to the server
             while (scanner.hasNextLine()) {
+                if (scanner.nextLine().equals("/exit")) {
+                    System.exit(0);
+                }
                 output.println(scanner.nextLine());
             }
         }

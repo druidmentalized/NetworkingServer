@@ -1,3 +1,5 @@
+package server;
+
 public class Commands {
     public static final String dm = "/dm";
     public static final String em = "/em";

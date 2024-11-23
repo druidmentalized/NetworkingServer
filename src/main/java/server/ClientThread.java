@@ -1,3 +1,7 @@
+package server;
+
+import utils.Utility;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -106,6 +110,9 @@ public class ClientThread extends Thread {
                             if (tempClientNickname.length() > 30) {
                                 output.println("Your nickname is too long!");
                             }
+                            else if (server.getBannedPhrases().contains(tempClientNickname.toLowerCase())) {
+                                output.println("You can't use prohibited words as a nickname!");
+                            }
                             else if (server.getConnectedClients().stream().anyMatch(clientThread -> clientThread.clientNickname.equals(tempClientNickname))) {
                                 output.println("Nickname like this already exists!");
                             }
@@ -160,7 +167,7 @@ public class ClientThread extends Thread {
             //reconstructing the message & checking for banned words
             clientMessage = "";
             while (!messageParts.isEmpty()) {
-                if (server.getBannedPhrases().contains(messageParts.getFirst())) {
+                if (server.getBannedPhrases().contains(messageParts.getFirst().toLowerCase())) {
                     output.println("Your message contains banned word!");
                     return;
                 }
@@ -193,7 +200,6 @@ public class ClientThread extends Thread {
         }
     }
 
-    //todo ask about clearing of the console
     private void updateConsole() {
         Utility.clearConsole(output);
         showAllConnectedClients();
@@ -237,6 +243,7 @@ public class ClientThread extends Thread {
         output.println("/dm <usernickname1>, <usernickname2>, <...> -- addressing message to group of specific users");
         output.println("/em <usernickname> -- addressing message to everyone else but this user");
         output.println("/em <usernickname1>, <usernickname2>, <...> -- addressing message to everyone else but group of specific users");
+        output.println("/exit -- leaving the server");
         output.println("Writing plain text will result in messaging using global chat available to all users");
     }
 
