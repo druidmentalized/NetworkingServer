@@ -37,10 +37,11 @@ public class Client {
 
             //writing information to the server
             while (scanner.hasNextLine()) {
-                if (scanner.nextLine().equals("/exit")) {
+                String message = scanner.nextLine();
+                if (message.equals("/exit")) {
                     System.exit(0);
                 }
-                output.println(scanner.nextLine());
+                output.println(message);
             }
         }
         catch (IOException e) {

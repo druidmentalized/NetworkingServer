@@ -235,14 +235,14 @@ public class ClientThread extends Thread {
 
     private void showServerCommands() {
         output.println("Commands available on the server: ");
-        output.println("/help -- show this menu");
-        output.println("/rules -- shows server rules");
-        output.println("/bannedwords -- shows banned words");
-        output.println("/nickname <usernickname> -- sets your new nickname");
-        output.println("/dm <usernickname> -- addressing message to a specific user");
-        output.println("/dm <usernickname1>, <usernickname2>, <...> -- addressing message to group of specific users");
-        output.println("/em <usernickname> -- addressing message to everyone else but this user");
-        output.println("/em <usernickname1>, <usernickname2>, <...> -- addressing message to everyone else but group of specific users");
+        output.println(Commands.help + " -- show this menu");
+        output.println(Commands.rules + " -- shows server rules");
+        output.println(Commands.bannedWords + " -- shows banned words");
+        output.println(Commands.nickname + " <usernickname> -- sets your new nickname");
+        output.println(Commands.dm + " <usernickname> -- addressing message to a specific user");
+        output.println(Commands.dm + " <usernickname1>, <usernickname2>, <...> -- addressing message to group of specific users");
+        output.println(Commands.em + " <usernickname> -- addressing message to everyone else but this user");
+        output.println(Commands.em + " <usernickname1>, <usernickname2>, <...> -- addressing message to everyone else but group of specific users");
         output.println("/exit -- leaving the server");
         output.println("Writing plain text will result in messaging using global chat available to all users");
     }
