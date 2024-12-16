@@ -27,8 +27,12 @@ The server operates through a command-line interface, allowing users to connect 
 - Flexible user control
 
 ## Project Structure
-- `DAS.java` - Entry point of the program
-- `src/main/java/DAS` - Main directory with file
+- `Server.java` - Entry point of the server application
+- `Client.java` - Entry point of the client application
+- `src/main/java/client` - Directory with client classes
+- `src/main/java/server` - Directory with server classes
+- `src/main/java/utils` - Directory with utility classes
+- `src/main/resources` - Program assets(i.e. config)
 - `README.md` - Project documentation
   
 ## License
