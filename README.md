@@ -34,6 +34,7 @@ The server operates through a command-line interface, allowing users to connect 
 - `src/main/java/utils` - Directory with utility classes
 - `src/main/resources` - Program assets(i.e. config)
 - `README.md` - Project documentation
+- `LICENSE` - Project license
   
 ## License
 This project is licensed under the MIT License
